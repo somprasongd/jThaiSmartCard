@@ -12,6 +12,10 @@ public class AddressConverter implements Converter {
     @Override
     public Object toObject(byte[] src) {
         String[] addrs = new String(src, TIS620).trim().split("#");
+        return toAddress(addrs);
+    }
+
+    private Address toAddress(String[] addrs) {
         Address address = new Address();
         String fullAddress = "";
         process:
@@ -23,6 +27,10 @@ public class AddressConverter implements Converter {
             Matcher m = p.matcher(addr);
             if (m.matches()) {
                 address.setHouseNo(addr);
+                continue;
+            }
+            if (addr.equals("กรุงเทพมหานคร")) {
+                address.setProvince(addr);
                 continue;
             }
             for (String ADDR1 : ADDR) {

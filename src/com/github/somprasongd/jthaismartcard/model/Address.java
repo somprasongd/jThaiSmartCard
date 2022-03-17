@@ -11,15 +11,15 @@ package com.github.somprasongd.jthaismartcard.model;
  */
 public class Address {
 
-    private String houseNo;
-    private String moo;
-    private String soi;
-    private String road;
-    private String subdistrict;
-    private String district;
-    private String province;
+    private String houseNo = "";
+    private String moo = "";
+    private String soi = "";
+    private String road = "";
+    private String subdistrict = "";
+    private String district = "";
+    private String province = "";
 
-    private String address;
+    private String address = "";
 
     public Address() {
     }
